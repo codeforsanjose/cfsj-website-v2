@@ -1,1 +1,3 @@
-# cfsj-website-v2
+# Some coding rules
+
+1. Use function components
