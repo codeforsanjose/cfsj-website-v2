@@ -69,7 +69,7 @@ const HomeHeroStyleContainer = styled.div`
 		}
 	}
 
-	@media screen and (max-width: 500px) {
+	@media screen and (max-width: 834px) {
 		height: 58.3rem;
 		.hero-img-grid {
 			height: 58.3rem;
@@ -100,10 +100,51 @@ const HomeHeroStyleContainer = styled.div`
 			display: flex;
 			flex-direction: column;
 			align-items: center;
-			left: 3.5rem;
+			left: 50%;
+			transform: translateX(-50%);
 			bottom: 4.8rem;
 			button:first-child {
 				margin: 0 0 2.6rem 0;
+			}
+		}
+	}
+
+	@media screen and (max-width: 1100px) and (min-width: 834px) {
+		height: 119.7rem;
+		.hero-img-grid {
+			height: 119.7rem;
+			::after {
+				height: 119.7rem;
+			}
+		}
+		.hero-info-container {
+			bottom: 21rem;
+			left: 4.3rem;
+			.hero-main-text {
+				margin-top: 0;
+				font-size: 7.2rem;
+				line-height: 8.5rem;
+			}
+
+			.hero-main-text::after {
+				width: 73.4rem;
+				height: 3px;
+			}
+
+			.hero-sub-text {
+				font-size: 2.4rem;
+			}
+		}
+		.hero-btn-groups {
+			display: flex;
+			flex-direction: row;
+			align-items: center;
+
+			left: 50%;
+			transform: translateX(-50%);
+			bottom: 4.8rem;
+			button:first-child {
+				margin: 0 3.2rem 0 0;
 			}
 		}
 	}
