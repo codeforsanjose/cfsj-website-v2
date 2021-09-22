@@ -1,4 +1,4 @@
-import React, { useState, useEffect } from "react";
+import React, { useState } from "react";
 import { Link } from "gatsby";
 import styled from "styled-components";
 import { StaticImage } from "gatsby-plugin-image";
@@ -9,7 +9,7 @@ export const NavbarStyleContainer = styled.div`
 	position: fixed;
 	top: 0;
 	transition: background-color 0.25s;
-	background-color: ${(props) => props.bgColor};
+	background-color: rgba(27, 38, 59, 0.5);
 	z-index: 999;
 	> nav {
 		display: flex;
@@ -80,16 +80,6 @@ export const NavbarStyleContainer = styled.div`
 `;
 const Navbar = () => {
 	const [show, setShow] = useState(false);
-	const [navbarColor, setNavbarColor] = useState(false);
-
-	const changeNavbarBackgroundColor = () => {
-		console.log(window.scrollY);
-		if (window.scrollY >= 72) {
-			setNavbarColor(true);
-		} else {
-			setNavbarColor(false);
-		}
-	};
 
 	const handleNavbarClick = () => {
 		if (show) {
@@ -97,18 +87,8 @@ const Navbar = () => {
 		}
 	};
 
-	useEffect(() => {
-		window.addEventListener("scroll", changeNavbarBackgroundColor);
-
-		return () => {
-			window.removeEventListener("scroll", changeNavbarBackgroundColor);
-		};
-	}, []);
-
 	return (
-		<NavbarStyleContainer
-			bgColor={navbarColor ? "rgba(255,255,255,0.1)" : "transparent"}
-		>
+		<NavbarStyleContainer>
 			<nav>
 				<div className='nav-logo'>
 					<Link to='/'>
